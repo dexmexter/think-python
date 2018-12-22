@@ -8,6 +8,7 @@ def middle(word):
     return word[1:-1]
 
 def is_palindrome(word):
+    print(word)
     if len(word) <= 1:
         return True
     
@@ -15,4 +16,5 @@ def is_palindrome(word):
         return False 
     
     return is_palindrome(middle(word))
-    
+
+print(is_palindrome("racecar"))
