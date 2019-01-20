@@ -16,7 +16,7 @@ def are_reversed(i, j):
     i: int
     j: int
 
-    returns: book
+    returns: bool
     """
     return str_fill(i, 2) == str_fill(j, 2)[::-1]
 
@@ -61,5 +61,5 @@ print('diff #instances')
 check_diffs()
 
 print()
-print('daughter mother')
-num_instances(18, True)
+#print('daughter mother')
+#num_instances(18, True)
