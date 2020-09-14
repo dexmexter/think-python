@@ -1,4 +1,4 @@
-t = [1, 2, 3]
+t = [1, 2, 3, 5]
 
 def cumsum(t):
     total = 0
@@ -7,7 +7,7 @@ def cumsum(t):
     for i in t:
         total += i
         result.append(total)
-    
+
     return result
 
 
