@@ -6,6 +6,7 @@ dictionary. It doesn't matter what the values are. Then you can use the in
 operator as a fast way to check whether a string is in the dictionary.
 """
 
+
 def word_dict(file_in):
     words = {}
 
@@ -15,8 +16,10 @@ def word_dict(file_in):
 
     return words
 
+
 def in_dict(d, word):
     return word in d
+
 
 words = word_dict('../words.txt')
 

@@ -40,3 +40,70 @@ word to a string that describes its primary pronunciation.
 Write a program that lists all the words that solve the
 Puzzler. Solution: http://thinkpython2.com/code/homophone.py.
 """
+
+
+def word_dict():
+    """Creates a dictionary with only five letter words from file"""
+    words = {}
+
+    with open('../words.txt') as f:
+        for line in f:
+            word = line.strip().lower()
+            words[word] = None
+
+    return words
+
+
+def pronounce(filename='../pronunciations.txt'):
+    """Returns a dictionary with the values being a primary pronounciation
+    string"""
+    sound_dict = dict()
+
+    with open(filename) as f:
+        for line in f:
+            if line[0] == "#":
+                continue
+
+            t = line.split()
+
+            word = t[0].lower()
+            pron = ' '.join(t[1:])
+
+            sound_dict[word] = pron
+
+    return sound_dict
+
+
+def homophone(word_a, word_b, sound_dict):
+    """Takes two words and a pronounciation dictionary as input and returns
+    True if the words are homophones"""
+    if a not in sound_dict or b not in sound_dict:
+        return False
+
+    if sound_dict[a] == sound_dict[b]:
+        return True
+
+    return False
+
+
+if __name__ == '__main__':
+    word_dict = word_dict()
+    sound_dict = pronounce()
+
+    for word in word_dict:
+        a = word[1:]
+        b = word[0] + word[2:]
+
+        a_homo = False
+        b_homo = False
+
+        if a in sound_dict:
+            if homophone(word, a, sound_dict):
+                a_homo = True
+
+        if b in sound_dict:
+            if homophone(word, b, sound_dict):
+                b_homo = True
+
+        if a_homo and b_homo:
+            print(word, a, b)

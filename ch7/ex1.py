@@ -1,5 +1,6 @@
 import math
 
+
 def mysqrt(a):
     x = a
     while True:
@@ -9,15 +10,16 @@ def mysqrt(a):
         x = y
     return x
 
+
 def test_sqrt():
-    
+
     titles = ['a', 'mysqrt(a)', 'math.sqrt(a)', 'diff']
-    
+
     a_list = []
     mysqrt_list = []
     mathsqrt_list = []
     diff_list = []
-    
+
     for i in range(1, 10):
         a_list.append(float(i))
         mysqrt_list.append(mysqrt(float(i)))
@@ -35,5 +37,6 @@ def test_sqrt():
         print(line)
         if i == 0:
             print('-' * len(line))
+
 
 print(test_sqrt())
