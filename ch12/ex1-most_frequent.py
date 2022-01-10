@@ -27,4 +27,15 @@ def frequency(t):
 
 
 if __name__ == '__main__':
-    print(frequency("Hello world.")
+    test_string = "Hello, world"
+
+    hist = frequency(test_string)
+
+    sort_hist = sorted(hist.items(), key=lambda kv: kv[1], reverse=True)
+
+    new_string = ""
+    for key, value in sort_hist:
+        new_string += key * value
+
+    for i in new_string:
+        print(i)
